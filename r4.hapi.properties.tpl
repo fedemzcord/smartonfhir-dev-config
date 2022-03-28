@@ -75,7 +75,7 @@ fhirpath_interceptor.enabled=false
 ###################################################
 # Database Settings
 ###################################################
-hibernate.dialect=org.hibernate.dialect.H2Dialect
+hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 hibernate.search.model_mapping=ca.uhn.fhir.jpa.search.LuceneSearchMappingFactory
 hibernate.format_sql=false
 hibernate.show_sql=false
