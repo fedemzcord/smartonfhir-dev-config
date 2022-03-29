@@ -36,7 +36,7 @@ logger.format=Path[${servletPath}] Source[${requestHeader.x-forwarded-for}] Oper
 logger.error_format=ERROR - ${requestVerb} ${requestUrl}
 logger.log_exceptions=true
 datasource.driver=com.mysql.jdbc.Driver
-datasource.url=jdbc:mysql://dev-next-smartonfhir-db.cvl10wwmtplv.us-east-2.rds.amazonaws.com:3306/r4?useSSL=false
+datasource.url=jdbc:mysql://dev-next-smartonfhir-db.cvl10wwmtplv.us-east-2.rds.amazonaws.com:3306/r4?useSSL=false&autoReconnect=true&profileSQL=true
 datasource.username=admin
 datasource.password=a9143bf1a9
 server.name=Local Tester
@@ -80,7 +80,9 @@ hibernate.search.model_mapping=ca.uhn.fhir.jpa.search.LuceneSearchMappingFactory
 hibernate.format_sql=false
 hibernate.show_sql=false
 hibernate.hbm2ddl.auto=update
-hibernate.jdbc.batch_size=20
+hibernate.jdbc.batch_size = 500
+hibernate.order_inserts   = true 
+hibernate.order_updates   = true
 hibernate.cache.use_query_cache=false
 hibernate.cache.use_second_level_cache=false
 hibernate.cache.use_structured_entries=false
