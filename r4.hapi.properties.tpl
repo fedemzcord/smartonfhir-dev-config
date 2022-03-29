@@ -35,7 +35,7 @@ logger.name=fhirtest.access
 logger.format=Path[${servletPath}] Source[${requestHeader.x-forwarded-for}] Operation[${operationType} ${operationName} ${idOrResourceName}] UA[${requestHeader.user-agent}] Params[${requestParameters}] ResponseEncoding[${responseEncodingNoDefault}]
 logger.error_format=ERROR - ${requestVerb} ${requestUrl}
 logger.log_exceptions=true
-datasource.driver=com.mysql.jdbc.Driver
+datasource.driver=com.mysql.cj.jdbc.Driver
 datasource.url=jdbc:mysql://dev-next-smartonfhir-db.cvl10wwmtplv.us-east-2.rds.amazonaws.com:3306/r4?useSSL=false
 datasource.username=admin
 datasource.password=a9143bf1a9
