@@ -66,7 +66,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector port="8080" protocol="HTTP/1.1" maxPostSize="25971520" maxHttpHeaderSize="600000" connectionTimeout="60000" redirectPort="8443" />
+    <Connector port="8080" protocol="HTTP/1.1" maxConnections="2500" maxSwallowSize="25971520" minSpareThreads="250" enableLookups="false" maxThreads="2500" disableUploadTimeout="true" acceptCount="2500" asyncTimeout="3000000" connectionTimeout="3000000" maxPostSize="25971520" maxHttpHeaderSize="600000"  redirectPort="8443" />
 
     <!--
     This is not used when the server is started by running the image. The entire server.xml file
@@ -75,7 +75,7 @@
     /usr/local/tomcat/conf/server.xml. This way we have the server listening at two ports - one
     for internal use (8080) and one that matches the port that is used externaly ($PORT).
     -->
-    <Connector port="$PORT" protocol="HTTP/1.1" maxPostSize="25971520" maxHttpHeaderSize="600000" connectionTimeout="6000000" redirectPort="8443" />
+    <Connector port="$PORT" protocol="HTTP/1.1"  maxConnections="2500" maxSwallowSize="25971520" minSpareThreads="250" enableLookups="false" maxThreads="2500" disableUploadTimeout="true" acceptCount="2500" asyncTimeout="3000000" connectionTimeout="3000000" maxPostSize="25971520" maxHttpHeaderSize="600000"  redirectPort="8443" />
 
     <!-- A "Connector" using the shared thread pool-->
     <!--
