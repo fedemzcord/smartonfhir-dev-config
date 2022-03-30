@@ -6,9 +6,7 @@
   The ASF licenses this file to You under the Apache License, Version 2.0
   (the "License"); you may not use this file except in compliance with
   the License.  You may obtain a copy of the License at
-
       http://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -66,7 +64,7 @@
          APR (HTTP/AJP) Connector: /docs/apr.html
          Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
     -->
-    <Connector port="8080" protocol="HTTP/1.1" maxConnections="2500" maxSwallowSize="25971520" minSpareThreads="250" enableLookups="false" maxThreads="2500" disableUploadTimeout="true" acceptCount="2500" asyncTimeout="3000000" connectionTimeout="3000000" maxPostSize="25971520" maxHttpHeaderSize="600000"  redirectPort="8443" />
+    <Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
 
     <!--
     This is not used when the server is started by running the image. The entire server.xml file
@@ -75,7 +73,7 @@
     /usr/local/tomcat/conf/server.xml. This way we have the server listening at two ports - one
     for internal use (8080) and one that matches the port that is used externaly ($PORT).
     -->
-    <Connector port="80" protocol="HTTP/1.1" maxConnections="2500" maxSwallowSize="25971520" minSpareThreads="250" enableLookups="false" maxThreads="2500" disableUploadTimeout="true" acceptCount="2500" asyncTimeout="3000000" connectionTimeout="3000000" maxPostSize="25971520" maxHttpHeaderSize="600000"  redirectPort="8443" />
+    <Connector port="$PORT" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
 
     <!-- A "Connector" using the shared thread pool-->
     <!--
